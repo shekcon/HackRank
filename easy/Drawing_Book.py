@@ -16,10 +16,18 @@ def pageCount(n, p):
     return head if head < end else end
 
 def head_book(n,p):
+    """
+    find flip_time from head of book
+    return int
+    """
     found = [ i for i in range(n//2 + 1) if p <= (2*i + 1) ]
     return min(found)
 
 def end_book(n,p):
+    """
+    find flip_time from end of book
+    return int
+    """
     found = [ i for i in range(n//2 + 1) if p >= n - 2*i - old_even(n)] 
     return min(found)
 
