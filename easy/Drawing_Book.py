@@ -13,7 +13,6 @@ def pageCount(n, p):
     # Write your code here.
     #
     head, end = head_book(n,p), end_book(n, p)
-    print(head, end)
     return head if head < end else end
 
 def head_book(n,p):
