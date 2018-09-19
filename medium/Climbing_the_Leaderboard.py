@@ -40,7 +40,7 @@ def ranked_search(content, score):
             else:
                 first = midpoint+1
 
-    return midpoint if score == content[midpoint] else midpoint +1
+    return midpoint if score >= content[midpoint] else midpoint +1
 
 if __name__ == '__main__':
 
