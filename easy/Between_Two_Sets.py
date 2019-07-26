@@ -1,36 +1,54 @@
 # https://www.hackerrank.com/challenges/between-two-sets/problem
 
 #!/bin/python3
-    
+
 import os
 import sys
 
 #
 # Complete the getTotalX function below.
 #
+
+
 def getTotalX(a, b):
     #
     # Write your code here.
     #
-    
-
-
-def multiples(number):
-    table_muitiples = []
+    factors = get_factor(a[-1], b[0], a)
+    print(factors)
     i = 0
-    while number * i < min_b:
-        table_muitiples.append()
-    return  
+    while i < len(factors):
+        if not validate_factor(factors[i], b, is_factor):
+            factors.remove(factors[i])
+        else:
+            i += 1
+    return len(factors)
 
-def get_fator(a, min_b):
 
-    return fators
+def get_factor(a, min_b, s):
+    factors = []
+    number = a
+    while number <= min_b:
+        if validate_factor(number, s, all_factor):
+            factors.append(number)
+        number += 1
+    return factors
 
-def is_divide_evenly(b, fator):
-    for number in b:
-        if number % fator != 0:
+
+def all_factor(number, n):
+    return number % n != 0
+
+
+def is_factor(number, n):
+    return n % number != 0
+
+
+def validate_factor(number, s, fn):
+    for e in s:
+        if fn(number, e):
             return False
     return True
+
 
 if __name__ == '__main__':
 
@@ -46,4 +64,4 @@ if __name__ == '__main__':
 
     total = getTotalX(a, b)
 
-    print(result)
+    print(total)
